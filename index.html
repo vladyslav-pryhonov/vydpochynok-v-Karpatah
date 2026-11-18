@@ -15,6 +15,7 @@
 {"@context":"https://schema.org","@type":"LodgingBusiness","name":"Плай і Пара","description":"Три хатинки з власним чаном і сауною в лісі, урочище Плай-Смерічка, Верховинський район","priceRange":"3200-5800 UAH","address":{"@type":"PostalAddress","addressLocality":"Верховинський район","addressRegion":"Івано-Франківська область","addressCountry":"UA"}}
 </script>
 <link rel="preload" href="fonts/spectral-normal-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/onest-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/base.css">
 <style>
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{animation-duration:.001ms !important;transition-duration:.001ms !important}}
@@ -22,7 +23,7 @@
 ::-webkit-scrollbar-track{background:var(--dusk-deep)}
 ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--amber),var(--clay));border-radius:8px;border:2.5px solid var(--dusk-deep);box-shadow:inset 0 0 0 1px rgba(237,230,214,.15)}
 ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,#EEC486,var(--amber))}
-body{font-family:'Karla',sans-serif;background:var(--dusk-deep);color:var(--ink);line-height:1.6;font-size:1.05rem;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
+body{font-family:'Onest',system-ui,sans-serif;background:var(--dusk-deep);color:var(--ink);line-height:1.6;font-size:1.05rem;-webkit-tap-highlight-color:transparent;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:inherit;text-decoration:none}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
@@ -46,6 +47,8 @@ h3{font-size:1.3rem}
 .btn-ghost:hover{background:rgba(237,230,214,.12);border-color:var(--paper)}
 .btn-sm{padding:11px 20px;font-size:.9rem}
 @media(hover:none){.btn:hover{transform:none}}
+/* Onest трохи ширший за системний sans: на найвужчих екранах (≤360px) кнопки з довгим підписом не вилазять за картку */
+@media(max-width:360px){.btn{padding-inline:20px}.btn-sm{padding-inline:14px}}
 
 /* ===== ШАПКА ===== */
 header.site{position:sticky;top:0;z-index:100;background:rgba(237,230,214,.85);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(213,198,168,.4);transition:box-shadow .25s ease,background .25s ease}
@@ -170,8 +173,8 @@ section[id]{scroll-margin-top:88px}
 .booking-summary{background:var(--dusk-deep);color:var(--paper);padding:24px 26px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut));display:flex;flex-direction:column}
 .guest-field{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid rgba(237,230,214,.18)}
 .guest-field label{font-weight:700;font-size:.92rem;color:#D6CDBB}
-.arrival-link{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.05rem;color:var(--amber);display:flex;align-items:center;gap:8px}
-.arrival-link span{font-family:'Karla',sans-serif;font-weight:600;font-size:.74rem;color:#C7BBA4}
+.arrival-link{font-family:'Onest',system-ui,sans-serif;font-weight:700;font-size:1.05rem;color:var(--amber);display:flex;align-items:center;gap:8px}
+.arrival-link span{font-family:'Onest',system-ui,sans-serif;font-weight:600;font-size:.74rem;color:#C7BBA4}
 .arrival-link:hover span{color:var(--amber)}
 .stepper{display:flex;align-items:center;gap:14px}
 .stepper button{width:32px;height:32px;border-radius:50%;background:rgba(237,230,214,.12);font-size:1.15rem;font-weight:700;color:var(--paper)}
@@ -187,7 +190,7 @@ section[id]{scroll-margin-top:88px}
 .total-box{border-top:2px dashed rgba(237,230,214,.22);padding-top:16px;margin-top:auto}
 .total-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:7px;font-size:.9rem;color:#D6CDBB}
 .total-row.final{font-size:1.05rem;font-weight:800;color:var(--paper)}
-.total-row span:last-child{font-family:'Space Grotesk',sans-serif;font-weight:600}
+.total-row span:last-child{font-family:'Onest',system-ui,sans-serif;font-weight:600}
 .deposit-note{font-size:.8rem;color:#C7BBA4;margin-top:8px;margin-bottom:18px}
 .booking-summary .btn{width:100%}
 .form-msg{margin-top:12px;font-size:.86rem;padding:11px 13px;display:none;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px)}
@@ -206,8 +209,8 @@ section[id]{scroll-margin-top:88px}
 .cabin-photo .view-tag{position:absolute;bottom:12px;left:12px;background:rgba(20,27,19,.76);color:var(--paper);padding:7px 13px;font-size:.8rem;font-weight:700;display:flex;align-items:center;gap:6px;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
 .cabin-body{padding:22px 20px 24px;display:flex;flex-direction:column;gap:9px;flex:1}
 .cabin-meta{font-size:.88rem;color:var(--ink-faint)}
-.cabin-price{font-family:'Space Grotesk',sans-serif;font-size:1.4rem;font-weight:600;color:var(--dusk);margin-top:4px}
-.cabin-price small{font-family:'Karla',sans-serif;font-size:.74rem;font-weight:700;color:var(--ink-faint);display:block}
+.cabin-price{font-family:'Onest',system-ui,sans-serif;font-size:1.4rem;font-weight:600;color:var(--dusk);margin-top:4px}
+.cabin-price small{font-family:'Onest',system-ui,sans-serif;font-size:.74rem;font-weight:700;color:var(--ink-faint);display:block}
 .cabin-extra{font-size:.84rem;color:var(--ink-faint)}
 .cabin-body .btn{margin-top:auto}
 
@@ -220,7 +223,7 @@ section[id]{scroll-margin-top:88px}
 .incl-yes li{display:flex;align-items:center;gap:11px;font-size:1.02rem;color:#D6CDBB}
 .incl-no li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:1rem;color:#D6CDBB;padding-bottom:12px;border-bottom:1px dashed rgba(237,230,214,.2)}
 .incl-no li:last-child{border-bottom:none;padding-bottom:0}
-.incl-no li b{font-family:'Space Grotesk',sans-serif;color:var(--amber);font-weight:700;white-space:nowrap}
+.incl-no li b{font-family:'Onest',system-ui,sans-serif;color:var(--amber);font-weight:700;white-space:nowrap}
 
 /* ===== ЧОМУ МИ (картки) ===== */
 .why-cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -236,7 +239,7 @@ section[id]{scroll-margin-top:88px}
 /* minmax(0,1fr): колонки завжди рівні. З «1fr 1fr» (= minmax(auto,1fr)) довге слово («Підтвердження») розтягувало ліву колонку й виштовхувало праву за межі картки */
 .steps-v2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:1fr;gap:18px;flex:1}
 .step-v2{min-width:0;background:rgba(237,230,214,.07);border:1px solid rgba(237,230,214,.18);padding:22px 20px;clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
-.step-v2 .num{font-family:'Space Grotesk',sans-serif;font-size:2.1rem;font-weight:700;color:var(--amber);line-height:1;margin-bottom:8px}
+.step-v2 .num{font-family:'Onest',system-ui,sans-serif;font-size:2.1rem;font-weight:700;color:var(--amber);line-height:1;margin-bottom:8px}
 .step-v2 b{display:block;font-size:1.1rem;margin-bottom:5px;overflow-wrap:anywhere;hyphens:auto}
 .step-v2 p{font-size:.88rem;color:#D6CDBB;line-height:1.3;overflow-wrap:anywhere}
 @media(max-width:760px){
@@ -263,8 +266,8 @@ section[id]{scroll-margin-top:88px}
 .wt-arrival{cursor:pointer}
 .wt-arrival:hover .ic,.wt-arrival:hover{filter:brightness(1.1)}
 .wt-label{position:absolute;bottom:150%;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:1px;white-space:nowrap}
-.wt-label b{font-family:'Karla',sans-serif;font-size:.62rem;font-weight:700;color:#D6CDBB;text-transform:uppercase;letter-spacing:.02em}
-.wt-label span{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:700;color:var(--paper)}
+.wt-label b{font-family:'Onest',system-ui,sans-serif;font-size:.62rem;font-weight:700;color:#D6CDBB;text-transform:uppercase;letter-spacing:.02em}
+.wt-label span{font-family:'Onest',system-ui,sans-serif;font-size:.82rem;font-weight:700;color:var(--paper)}
 .wt-window{position:absolute;top:0;height:100%;background:linear-gradient(90deg,var(--clay),var(--amber));border-radius:4px;transition:left .3s ease,width .3s ease;pointer-events:none}
 .wt-marker{position:absolute;top:50%;left:0;transform:translate(-50%,-50%);width:25px;height:25px;border-radius:50%;background:var(--dusk-deep);border:2.5px solid var(--amber);display:flex;align-items:center;justify-content:center;color:var(--amber);transition:left .3s ease;pointer-events:none}
 .wt-arrival{background:var(--amber);border-color:var(--paper);color:var(--dusk-deep)}
@@ -291,7 +294,7 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 .ripple.r3{animation-delay:3s}
 @keyframes ripple{0%{opacity:.55;transform:scale(.35)}70%{opacity:0}100%{opacity:0;transform:scale(1)}}
 .cabin-dot{cursor:pointer}
-.dist-label{font-size:13px;fill:var(--ink-soft);font-family:'Karla',sans-serif;font-weight:700}
+.dist-label{font-size:13px;fill:var(--ink-soft);font-family:'Onest',system-ui,sans-serif;font-weight:700}
 .map-popup{position:absolute;display:none;background:var(--dusk-deep);color:var(--paper);padding:12px 16px;z-index:20;min-width:150px;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
 .map-popup.show{display:block}
 .map-popup b{display:block;font-family:'Spectral',serif;font-size:1rem;margin-bottom:2px}
@@ -330,11 +333,11 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 /* ===== ВІДГУКИ ===== */
 .hero-stats{display:flex;gap:22px;flex-wrap:wrap;margin-top:24px}
 @media(max-width:480px){.hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px 20px}}
-.hero-stats .stat b{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;color:var(--amber);display:block}
+.hero-stats .stat b{font-family:'Onest',system-ui,sans-serif;font-size:1.3rem;font-weight:600;color:var(--amber);display:block}
 .hero-stats .stat span{font-size:.78rem;color:#C7BBA4}
 .reviews-trust{display:flex;align-items:center;gap:8px;margin-bottom:26px;font-size:.94rem;color:#D6CDBB}
 .reviews-trust b{color:var(--paper)}
-.stat b{font-family:'Space Grotesk',sans-serif;font-size:1.7rem;font-weight:600;color:var(--amber);display:block}
+.stat b{font-family:'Onest',system-ui,sans-serif;font-size:1.7rem;font-weight:600;color:var(--amber);display:block}
 .stat span{font-size:.8rem;color:#D6CDBB}
 .reviews-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:860px){.reviews-cards{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
@@ -457,7 +460,7 @@ footer{position:relative;z-index:3;background:var(--dusk-deep);color:#C7BBA4;pad
         <h1>Хатинка з&nbsp;чаном і&nbsp;сауною&nbsp;– без&nbsp;сусідів навколо</h1>
         <p class="lede" style="color:#E7DFCB;margin-top:14px;max-width:46ch">Три хатинки на весь ліс у Карпатах. Чан гарячий точно до заїзду, за будь-якої погоди.</p>
         <div style="display:inline-flex;flex-direction:column;gap:2px;margin-top:22px;padding:13px 18px;background:rgba(20,27,19,.55);backdrop-filter:blur(2px);border:1px solid rgba(221,162,63,.55)" class="cut">
-          <b style="font-family:'Space Grotesk',sans-serif;font-size:1.3rem;color:var(--amber);font-weight:600">від 3 200&nbsp;грн/ніч</b>
+          <b style="font-family:'Onest',system-ui,sans-serif;font-size:1.3rem;color:var(--amber);font-weight:600">від 3 200&nbsp;грн/ніч</b>
           <small style="color:#E7DFCB;font-size:.78rem">прибирання і дрова включені</small>
         </div>
         <div style="display:flex;align-items:center;gap:14px;margin-top:22px;flex-wrap:wrap">
