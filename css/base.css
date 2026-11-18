@@ -27,3 +27,5 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--amber) var(--dusk-deep)}
+
+::selection{background:#DDA23F;color:#141B13}
