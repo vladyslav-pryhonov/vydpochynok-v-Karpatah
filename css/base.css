@@ -49,3 +49,7 @@ html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--amber) va
   footer .footer-col ul{gap:0}
   footer .footer-col a,footer .footer-col button{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
 }
+
+/* Рівніші рядки: заголовки балансуються, абзаци без осиротілих слів. Старі браузери ігнорують. */
+h1,h2,h3,h4{text-wrap:balance}
+p,li,blockquote{text-wrap:pretty}
