@@ -30,7 +30,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 h1,h2,h3,h4{font-family:'Spectral',serif;font-weight:600;color:var(--dusk);line-height:1.14;letter-spacing:-.005em}
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 .cut{clip-path:polygon(var(--cut) 0,100% 0,100% calc(100% - var(--cut)),calc(100% - var(--cut)) 100%,0 100%,0 var(--cut))}
-a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2.5px solid var(--amber);outline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2.5px solid var(--focus);outline-offset:3px}
 h1{font-size:clamp(2rem,4.2vw,3.1rem)}
 h2{font-size:clamp(1.6rem,3vw,2.3rem)}
 h3{font-size:1.3rem}
@@ -65,7 +65,7 @@ nav.primary a:hover{color:var(--dusk);border-color:var(--amber)}
 .head-actions{display:flex;align-items:center;gap:12px}
 .tel-link{display:flex;align-items:center;gap:8px;font-weight:700;font-size:.92rem;color:var(--dusk)}
 .icon-btn{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:var(--paper-deep);transition:background .2s}
-.icon-btn:hover{background:var(--clay-light);color:var(--paper)}
+.icon-btn:hover{background:var(--clay-light);color:var(--dusk-deep)}
 .burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;border-radius:50%}
 .burger:hover{background:var(--paper-deep)}
 @media(max-width:960px){nav.primary{display:none}.tel-link span{display:none}.burger{display:flex}.head-actions .icon-btn{display:none}.head-actions .btn-primary{display:none}}
@@ -146,11 +146,11 @@ section[id]{scroll-margin-top:88px}
 .quick-pick:hover{background:var(--amber);color:var(--dusk-deep);border-color:var(--amber)}
 .cal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
 .cal-nav-btn{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--paper-deep)}
-.cal-nav-btn:hover{background:var(--clay-light);color:var(--paper)}
+.cal-nav-btn:hover{background:var(--clay-light);color:var(--dusk-deep)}
 .cal-month-label{font-family:'Spectral',serif;font-weight:600;font-size:1.02rem;color:var(--dusk)}
 .cal-dow{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
 .cal-dow span{text-align:center;font-size:.68rem;font-weight:700;color:var(--ink-faint)}
-.cal-dow span.weekend{color:var(--amber-deep)}
+.cal-dow span.weekend{color:#8A5E10}
 .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
 .cal-day{aspect-ratio:1/1;border:1.5px solid transparent;background:var(--paper-deep);font-size:.84rem;font-weight:700;color:var(--ink);display:flex;align-items:center;justify-content:center;border-radius:50%;cursor:pointer;position:relative}
 .cal-day.weekend{border-color:rgba(221,162,63,.4)}
@@ -288,6 +288,19 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;bac
 @media(max-width:760px){
   .wt-arrival .wt-label{bottom:auto;top:calc(100% + 8px)}
   .wt-scale{margin-top:64px}
+}
+
+/* ===== ЦІЛІ ДОТИКУ (≥44 px; вигляд не змінюється) ===== */
+.wt-input[type=range]{height:44px}
+.cal-nav-btn,.stepper button,.arrival-link{position:relative}
+.cal-nav-btn::after,.stepper button::after{content:"";position:absolute;inset:-7px}
+.stepper button::after{inset:-6px}
+.arrival-link::after{content:"";position:absolute;inset:-9px -4px}
+@media(max-width:760px),(pointer:coarse){
+  .quick-pick{display:inline-flex;align-items:center;min-height:44px;padding-block:0}
+  .addon{min-height:44px}
+  .cal-widget{padding-inline:12px}
+  .cal-grid{gap:1px}
 }
 
 /* ===== ПРИВАТНІСТЬ ===== */
@@ -735,11 +748,11 @@ footer{position:relative;z-index:3;background:var(--dusk-deep);color:#C7BBA4;pad
               <use href="#pine" x="60" y="58" transform="scale(0.7)"/>
 
               <g class="ripple r1"><circle cx="110" cy="91" r="41" fill="none" stroke="#DDA23F" stroke-width="1.6"/></g>
-              <g class="cabin-dot" tabindex="0" role="button" aria-label="Смерека: показати ціну й бронювання" data-cabin="smereka" data-x="110" data-y="91"><use href="#hut" x="110" y="91"/><text x="110" y="74" text-anchor="middle" class="dist-label">Смерека</text></g>
+              <g class="cabin-dot" tabindex="0" role="button" aria-label="Смерека: показати ціну й бронювання" data-cabin="smereka" data-x="110" data-y="91"><circle cx="110" cy="91" r="42" fill="transparent"/><use href="#hut" x="110" y="91"/><text x="110" y="74" text-anchor="middle" class="dist-label">Смерека</text></g>
               <g class="ripple r2"><circle cx="300" cy="73" r="47" fill="none" stroke="#DDA23F" stroke-width="1.6"/></g>
-              <g class="cabin-dot" tabindex="0" role="button" aria-label="Ялівець: показати ціну й бронювання" data-cabin="yalivets" data-x="300" data-y="73"><use href="#hut" x="300" y="73"/><text x="300" y="56" text-anchor="middle" class="dist-label">Ялівець</text></g>
+              <g class="cabin-dot" tabindex="0" role="button" aria-label="Ялівець: показати ціну й бронювання" data-cabin="yalivets" data-x="300" data-y="73"><circle cx="300" cy="73" r="42" fill="transparent"/><use href="#hut" x="300" y="73"/><text x="300" y="56" text-anchor="middle" class="dist-label">Ялівець</text></g>
               <g class="ripple r3"><circle cx="210" cy="175" r="44" fill="none" stroke="#DDA23F" stroke-width="1.6"/></g>
-              <g class="cabin-dot" tabindex="0" role="button" aria-label="Кедрина: показати ціну й бронювання" data-cabin="kedryna" data-x="210" data-y="175"><use href="#hut" x="210" y="175"/><text x="210" y="158" text-anchor="middle" class="dist-label">Кедрина</text></g>
+              <g class="cabin-dot" tabindex="0" role="button" aria-label="Кедрина: показати ціну й бронювання" data-cabin="kedryna" data-x="210" data-y="175"><circle cx="210" cy="175" r="42" fill="transparent"/><use href="#hut" x="210" y="175"/><text x="210" y="158" text-anchor="middle" class="dist-label">Кедрина</text></g>
 
               <line x1="110" y1="91" x2="300" y2="73" stroke="#A65B3E" stroke-width="1.2" stroke-dasharray="3 3"/><text x="205" y="75" text-anchor="middle" class="dist-label">≈ 210 м</text>
               <line x1="110" y1="91" x2="210" y2="175" stroke="#A65B3E" stroke-width="1.2" stroke-dasharray="3 3"/><text x="130" y="138" text-anchor="middle" class="dist-label">≈ 180 м</text>

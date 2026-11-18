@@ -29,3 +29,23 @@
 html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--amber) var(--dusk-deep)}
 
 ::selection{background:#DDA23F;color:#141B13}
+
+/* ===== Контраст фокусу й цілі дотику (спільне для всіх сторінок) ===== */
+/* Кільце фокуса: темне на світлих поверхнях (бурштин на папері дає лише 1,85:1), бурштинове на темних */
+:root{--focus:#212B20}
+.content-card,.booking-summary,.booking-card,.for-whom,.hero-panel,.cabin-hero,.page-hero,footer,#cookieBanner,#secHero,.ig-block,.map-popup,.modal-overlay{--focus:#DDA23F}
+.policy-modal{--focus:#212B20}
+/* clip-path обрізає outline: на час фокуса прибираємо зрізані кути, щоб кільце було видно */
+.btn:focus-visible,.cabin-pill:focus-visible,.quick-pick:focus-visible{clip-path:none}
+.cabin-photo:focus-visible{outline-offset:-4px}
+/* Дотик: ≥44 px там, де це палець. Область натискання росте, вигляд лишається */
+.icon-btn{position:relative}
+.icon-btn::after{content:"";position:absolute;inset:-3px}
+@media(hover:hover) and (pointer:fine){.icon-btn::after{inset:0}}
+@media(max-width:960px){.tel-link{min-width:44px;min-height:44px;justify-content:center}}
+.logo{min-height:44px}
+@media(max-width:760px),(pointer:coarse){
+  .btn-sm{min-height:44px}
+  footer .footer-col ul{gap:0}
+  footer .footer-col a,footer .footer-col button{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+}
