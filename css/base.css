@@ -1,0 +1,55 @@
+/* Шрифти: Spectral (заголовки) і Onest (текст, інтерфейс, ціни) з кирилицею та латиницею, SIL OFL, самохостинг. Karla і Space Grotesk замінено: у них немає кирилиці. */
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 800;font-display:swap;src:url('../fonts/onest-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Onest';font-style:normal;font-weight:400 800;font-display:swap;src:url('../fonts/onest-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('../fonts/spectral-italic-400-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:swap;src:url('../fonts/spectral-italic-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:300;font-display:swap;src:url('../fonts/spectral-normal-300-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:300;font-display:swap;src:url('../fonts/spectral-normal-300-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/spectral-normal-400-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:swap;src:url('../fonts/spectral-normal-400-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/spectral-normal-500-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:500;font-display:swap;src:url('../fonts/spectral-normal-500-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/spectral-normal-600-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:600;font-display:swap;src:url('../fonts/spectral-normal-600-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/spectral-normal-700-cyrillic.woff2') format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Spectral';font-style:normal;font-weight:700;font-display:swap;src:url('../fonts/spectral-normal-700-latin.woff2') format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+/* ===== Спільні стилі всіх сторінок (було скопійовано в кожен html) ===== */
+:root{
+  --dusk:#212B20; --dusk-deep:#141B13;
+  --clay:#A65B3E; --clay-light:#C08765;
+  --amber:#DDA23F; --amber-deep:#BA8329;
+  --paper:#F0E8D6; --paper-deep:#E4D9C0; --paper-line:#D5C6A8;
+  --stone-tint:#E4E6DE; --card:#FAF5E9;
+  --ink:#2A241D; --ink-soft:#5C5142; --ink-faint:#62584B;
+  --cut:14px; --maxw:1180px; --header-h:74px;
+  font-size:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--amber) var(--dusk-deep)}
+
+::selection{background:#DDA23F;color:#141B13}
+
+/* ===== Контраст фокусу й цілі дотику (спільне для всіх сторінок) ===== */
+/* Кільце фокуса: темне на світлих поверхнях (бурштин на папері дає лише 1,85:1), бурштинове на темних */
+:root{--focus:#212B20}
+.content-card,.booking-summary,.booking-card,.for-whom,.hero-panel,.cabin-hero,.page-hero,footer,#cookieBanner,#secHero,.ig-block,.map-popup,.modal-overlay{--focus:#DDA23F}
+.policy-modal{--focus:#212B20}
+/* clip-path обрізає outline: на час фокуса прибираємо зрізані кути, щоб кільце було видно */
+.btn:focus-visible,.cabin-pill:focus-visible,.quick-pick:focus-visible{clip-path:none}
+.cabin-photo:focus-visible{outline-offset:-4px}
+/* Дотик: ≥44 px там, де це палець. Область натискання росте, вигляд лишається */
+.icon-btn{position:relative}
+.icon-btn::after{content:"";position:absolute;inset:-3px}
+@media(hover:hover) and (pointer:fine){.icon-btn::after{inset:0}}
+@media(max-width:960px){.tel-link{min-width:44px;min-height:44px;justify-content:center}}
+.logo{min-height:44px}
+@media(max-width:760px),(pointer:coarse){
+  .btn-sm{min-height:44px}
+  footer .footer-col ul{gap:0}
+  footer .footer-col a,footer .footer-col button{display:inline-flex;align-items:center;min-height:44px;min-width:44px}
+}
+
+/* Рівніші рядки: заголовки балансуються, абзаци без осиротілих слів. Старі браузери ігнорують. */
+h1,h2,h3,h4{text-wrap:balance}
+p,li,blockquote{text-wrap:pretty}
